@@ -34,7 +34,7 @@ export function About() {
     <section id="about" className="bg-secondary/40 py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-14 text-center" data-aos="fade-up">
-          <h1 className="font-dancing text-5xl text-primary">
+          <h1 className="font-extrabold font-dancing text-5xl text-primary">
             A Little About Me
           </h1>
         </div>
@@ -42,16 +42,13 @@ export function About() {
         <div className="grid items-start gap-12 md:grid-cols-2">
           <div data-aos="fade-right">
             <p className="mb-6 leading-relaxed text-muted-foreground">
-              I am an enthusiastic developer who enjoys turning ideas into
-              practical digital products. With a solid foundation in React and
-              TypeScript, I focus on clean code, performance, and thoughtful
-              user experiences.
+             I am an enthusiastic developer with knowledge of both frontend and backend development, passionate about turning ideas into practical digital products. I focus on writing clean code, optimizing performance, and creating thoughtful user experiences.
+
             </p>
 
             <p className="mb-8 leading-relaxed text-muted-foreground">
-              I am looking for an opportunity to grow in a professional
-              environment where I can learn, contribute, and collaborate with a
-              team to build meaningful products.
+             I am seeking an internship opportunity where I can apply my skills, gain hands-on experience, and grow in a professional environment. I look forward to collaborating with a team, contributing to meaningful projects, and pursuing my passion for software development.
+
             </p>
           </div>
 

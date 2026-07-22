@@ -1,4 +1,4 @@
-import { ArrowRight, FileText, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowRight, FileText, Github, Mail } from "lucide-react";
 import Link from "next/link";
 import { ImageWithFallback } from "./image-with-fallback";
 
@@ -17,11 +17,11 @@ export function Hero() {
           <h1 className="font-dancing font-extrabold text-6xl md:text-7xl text-primary leading-tight mb-2">
             Bùi Lê Huy Phước
           </h1>
-          <h2 className="text-xl md:text-2xl text-muted-foreground mb-6">
+          <h2 className="text-xl  md:text-2xl font-bold text-accent mb-6">
             I&apos;m currently looking for
             Frontend / Backend Developer Internship opportunity
           </h2>
-          <p className="text-muted-foreground max-w-md mb-8 leading-relaxed">
+          <p className=" text-muted-foreground  max-w-md mb-8 text-[17px] leading-relaxed">
             I am passionate about web development and seeking opportunity to work in a dynamic team where I can gain hands-on experience by
             contributing to real-world projects.
           </p>
@@ -29,26 +29,23 @@ export function Hero() {
           <div className="flex flex-wrap items-center gap-4 mb-8">
             <Link
               href="/project"
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-primary-foreground hover:bg-accent transition-colors"
+              className="inline-flex font-bold items-center gap-2 rounded-full bg-primary px-6 py-3 text-primary-foreground hover:bg-accent transition-colors"
             >
               View Projects <ArrowRight size={18} />
             </Link>
             <Link
               href="/cv"
-              className="inline-flex items-center gap-2 rounded-full border border-primary px-6 py-3 text-primary hover:bg-secondary transition-colors"
+              className="inline-flex font-bold items-center gap-2 rounded-full border border-primary px-6 py-3 text-primary hover:bg-secondary transition-colors"
             >
               <FileText size={18} /> View CV
             </Link>
           </div>
 
           <div className="flex items-center gap-4">
-            <a href="https://github.com/23521228-BuiLeHuyPhuoc" className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-foreground/70 hover:text-accent hover:border-accent transition-colors">
+            <a href="https://github.com/23521228-BuiLeHuyPhuoc" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-foreground/70 hover:text-accent hover:border-accent transition-colors">
               <Github size={18} />
             </a>
-            <a href="#" className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-foreground/70 hover:text-accent hover:border-accent transition-colors">
-              <Linkedin size={18} />
-            </a>
-            <a href="mailto:huyphuoc@example.com" className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-foreground/70 hover:text-accent hover:border-accent transition-colors">
+            <a href="mailto:huyphuoc09112005@gmail.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-foreground/70 hover:text-accent hover:border-accent transition-colors">
               <Mail size={18} />
             </a>
           </div>

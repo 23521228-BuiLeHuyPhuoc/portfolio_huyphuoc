@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 
 const contact = [
-  { icon: Mail, text: "huyphuoc@example.com" },
+  { icon: Mail, text: "huyphuoc09112005@gmail.com" },
   { icon: Phone, text: "+84 123 456 789" },
   { icon: MapPin, text: "Ho Chi Minh City, Vietnam" },
   { icon: Github, text: "github.com/23521228-BuiLeHuyPhuoc" },

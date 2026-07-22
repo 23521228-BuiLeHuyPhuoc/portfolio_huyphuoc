@@ -1,16 +1,15 @@
 import type { Metadata } from "next";
-import { Dancing_Script, Google_Sans } from "next/font/google";
+import { Dancing_Script, EB_Garamond } from "next/font/google";
 import "./globals.scss";
 import "./tailwind.css";
 import AOSProvider from "./components/AOSProvider";
 import { Navbar } from "./components/navbar";
 import { Footer } from "./components/footer";
 
-const googleSans = Google_Sans({
-  variable: "--font-google-sans",
+const ebGaramond = EB_Garamond({
+  variable: "--font-eb-garamond",
   subsets: ["latin", "vietnamese"],
   weight: "variable",
-  adjustFontFallback: false,
 });
 
 const dancingScript = Dancing_Script({
@@ -35,7 +34,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${googleSans.variable} ${dancingScript.variable} h-full antialiased`}
+      className={`${ebGaramond.variable} ${dancingScript.variable} h-full antialiased`}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />

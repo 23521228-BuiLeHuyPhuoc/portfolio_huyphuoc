@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
 import { HeaderTypewriter } from "./HieuUngGoChu";
+
 const links = [
   { label: "Home", to: "/" },
   { label: "About", to: "/aboutme" },
@@ -36,20 +37,58 @@ export function Navbar() {
           : "bg-background/60 backdrop-blur-sm"
       }`}
     >
-      <nav className=" max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
-        <Link
-          href="/"
-          className="min-w-0 flex-1 overflow-hidden whitespace-nowrap font-extrabold font-dancing text-sm md:flex-none md:w-72 md:text-xs lg:w-[28rem] lg:text-base xl:w-[30rem] xl:text-lg shrink-0"
-        >
-          <HeaderTypewriter />
-        </Link>
+        <div className="mx-auto max-w-6xl px-6">
+          <nav className="flex h-16 items-center justify-between gap-2 lg:gap-4">
+          <Link
+            href="/"
+            className="block min-w-0 flex-1 shrink-0 overflow-hidden whitespace-nowrap py-1 font-dancing font-extrabold md:w-[22rem] md:flex-none lg:w-[32rem] xl:w-[40rem]"
+          >
+            <HeaderTypewriter />
+          </Link>
 
-        <ul className="hidden md:flex items-center gap-4 lg:gap-8 mx-auto shrink-0">
-          {links.map((l) => (
-            <li key={l.to}>
+          <ul className="mx-auto hidden shrink-0 items-center gap-4 md:flex lg:gap-6 xl:gap-8">
+            {links.map((l) => {
+              const active = isActive(l.to);
+
+              return (
+                <li key={l.to} className="relative">
+                  <Link
+                    href={l.to}
+                    aria-current={active ? "page" : undefined}
+                    className={`relative block border-b-2 py-1 text-base transition-colors lg:text-lg ${
+                      active
+                        ? "border-accent text-accent"
+                        : "border-transparent text-foreground/80 hover:text-accent"
+                    }`}
+                  >
+                    {l.label}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+
+          <div className="flex shrink-0 items-center gap-2">
+            <ThemeToggle />
+            <button
+              className="text-foreground md:hidden"
+              onClick={() => setOpen((v) => !v)}
+              aria-label="Menu"
+            >
+              {open ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+          </nav>
+        </div>
+
+        {open && (
+          <div className="md:hidden bg-background border-b border-border px-6 py-4 flex flex-col gap-4">
+            {links.map((l) => (
               <Link
+                key={l.to}
                 href={l.to}
-                className={`text-lg transition-colors ${
+                onClick={() => setOpen(false)}
+                className={`transition-colors ${
                   isActive(l.to)
                     ? "text-accent"
                     : "text-foreground/80 hover:text-accent"
@@ -57,40 +96,9 @@ export function Navbar() {
               >
                 {l.label}
               </Link>
-            </li>
-          ))}
-        </ul>
-
-        <div className="flex items-center gap-2 shrink-0">
-          <ThemeToggle />
-          <button
-            className="md:hidden text-foreground"
-            onClick={() => setOpen((v) => !v)}
-            aria-label="Menu"
-          >
-            {open ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-      </nav>
-
-      {open && (
-        <div className="md:hidden bg-background border-b border-border px-6 py-4 flex flex-col gap-4">
-          {links.map((l) => (
-            <Link
-              key={l.to}
-              href={l.to}
-              onClick={() => setOpen(false)}
-              className={`transition-colors ${
-                isActive(l.to)
-                  ? "text-accent"
-                  : "text-foreground/80 hover:text-accent"
-              }`}
-            >
-              {l.label}
-            </Link>
-          ))}
-        </div>
-      )}
+            ))}
+          </div>
+        )}
     </header>
   );
 }

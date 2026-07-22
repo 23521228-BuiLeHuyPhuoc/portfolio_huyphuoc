@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, MapPin, Phone, Send, Github, Linkedin, CheckCircle2 } from "lucide-react";
+import { Mail, MapPin, Phone, Send, Github, CheckCircle2 } from "lucide-react";
 
 const info = [
   { icon: Mail, label: "Email", value: "huyphuoc09112005@gmail.com" },
@@ -51,9 +51,8 @@ export function Contact() {
               </div>
             ))}
             <div className="flex gap-3 pt-2">
-              <a href="#" className="w-11 h-11 rounded-full bg-secondary flex items-center justify-center text-primary hover:bg-accent hover:text-accent-foreground transition-colors"><Github size={18} /></a>
-              <a href="#" className="w-11 h-11 rounded-full bg-secondary flex items-center justify-center text-primary hover:bg-accent hover:text-accent-foreground transition-colors"><Linkedin size={18} /></a>
-              <a href="mailto:huyphuoc@example.com" className="w-11 h-11 rounded-full bg-secondary flex items-center justify-center text-primary hover:bg-accent hover:text-accent-foreground transition-colors"><Mail size={18} /></a>
+              <a href="https://github.com/23521228-BuiLeHuyPhuoc" className="w-11 h-11 rounded-full bg-secondary flex items-center justify-center text-primary hover:bg-accent hover:text-accent-foreground transition-colors"><Github size={18} /></a>
+              <a href="mailto:huyphuoc09112005@gmail.com" className="w-11 h-11 rounded-full bg-secondary flex items-center justify-center text-primary hover:bg-accent hover:text-accent-foreground transition-colors"><Mail size={18} /></a>
             </div>
           </div>
 

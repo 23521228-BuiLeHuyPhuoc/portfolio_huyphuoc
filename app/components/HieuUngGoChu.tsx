@@ -21,7 +21,7 @@ export function TypewriterText() {
 }
 export function HeaderTypewriter() {
   return (
-    <span className="text-primary text-[28px] font-semibold">
+    <span className="block w-full whitespace-nowrap text-[clamp(0.625rem,1.8vw,1.5rem)] leading-[1.35] font-semibold text-primary">
       <Typewriter
         words={[
           "Hi, This is Bùi Lê Huy Phước Portfolio!",
