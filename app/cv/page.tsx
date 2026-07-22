@@ -1,206 +1,58 @@
-"use client";
+import { Download, ExternalLink } from "lucide-react";
 
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Globe,
-  Github,
-  Download,
-  Printer,
-  Briefcase,
-  GraduationCap,
-  Star,
-} from "lucide-react";
-
-const contact = [
-  { icon: Mail, text: "huyphuoc09112005@gmail.com" },
-  { icon: Phone, text: "+84 123 456 789" },
-  { icon: MapPin, text: "Ho Chi Minh City, Vietnam" },
-  { icon: Github, text: "github.com/23521228-BuiLeHuyPhuoc" },
-  { icon: Globe, text: "huyphuoc.dev" },
-];
-
-const skills = [
-  "React / Next.js",
-  "TypeScript",
-  "Tailwind CSS",
-  "Node.js / Express",
-  "PostgreSQL / Supabase",
-  "Git & CI/CD",
-];
-
-const languages = [
-  { name: "Vietnamese", level: "Native" },
-  { name: "English", level: "TOEIC 800 / Good communication skills" },
-];
-
-const experience = [
-  {
-    role: "Front-end Developer Intern",
-    company: "ABC Technology Company",
-    time: "06/2024 — Present",
-    points: [
-      "Developed web interfaces with React and TypeScript while optimizing rendering performance.",
-      "Collaborated with the design team to implement accurate, responsive interfaces from Figma.",
-      "Participated in code reviews and wrote unit tests for critical components.",
-    ],
-  },
-  {
-    role: "Freelance Web Developer",
-    company: "Personal Projects & Small Business Clients",
-    time: "2023 — 2024",
-    points: [
-      "Built landing pages and business websites for local clients.",
-      "Deployed and maintained products on Vercel while improving technical SEO.",
-    ],
-  },
-];
-
-const education = [
-  {
-    degree: "Bachelor of Information Technology",
-    school: "University of Information Technology - VNU-HCM",
-    time: "2021 — 2025",
-    detail: "GPA: 3.4/4.0 — Major in Software Engineering.",
-  },
-];
-
-function SectionTitle({
-  icon: Icon,
-  title,
-}: {
-  icon: React.ElementType;
-  title: string;
-}) {
-  return (
-    <div className="flex items-center gap-2 border-b border-border pb-2">
-      <Icon size={18} className="text-accent" />
-      <h2 className="text-primary">{title}</h2>
-    </div>
-  );
-}
+const cvPath = "/autoCV.pdf";
 
 export default function CVPage() {
   return (
-    <section className="py-16 bg-secondary/40 min-h-[calc(100vh-4rem)]">
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="flex justify-end gap-3 mb-6 print:hidden">
-          <button
-            onClick={() => window.print()}
-            className="inline-flex items-center gap-2 rounded-full border border-primary px-5 py-2 text-sm text-primary hover:bg-secondary transition-colors"
-          >
-            <Printer size={16} /> Print CV
-          </button>
-          <button
-            onClick={() => window.print()}
-            className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2 text-sm text-primary-foreground hover:bg-accent transition-colors"
-          >
-            <Download size={16} /> Download PDF
-          </button>
+    <section className="min-h-[calc(100vh-4rem)] bg-secondary/40 py-10 md:py-16">
+      <div className="mx-auto max-w-6xl px-4 md:px-6">
+        <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <h1 className="font-dancing text-4xl font-bold text-primary md:text-5xl">
+              My CV
+            </h1>
+          </div>
+
+          <div className="flex flex-wrap gap-3">
+            <a
+              href={cvPath}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-primary px-5 py-2 text-sm text-primary transition-colors hover:bg-secondary"
+            >
+              <ExternalLink size={16} /> Open PDF
+            </a>
+            <a
+              href={cvPath}
+              download="Bui-Le-Huy-Phuoc-CV.pdf"
+              className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2 text-sm text-primary-foreground transition-colors hover:bg-accent"
+            >
+              <Download size={16} /> Download PDF
+            </a>
+          </div>
         </div>
 
-        <div className="bg-card border border-border rounded-2xl overflow-hidden shadow-sm">
-          <div className="bg-primary text-primary-foreground p-8">
-            <h1 className="font-dancing text-5xl mb-1">Bùi Lê Huy Phước</h1>
-            <p className="text-primary-foreground/80">
-              Frontend / Full-stack Developer
-            </p>
-            <div className="flex flex-wrap gap-x-6 gap-y-2 mt-5">
-              {contact.map((c) => (
-                <span
-                  key={c.text}
-                  className="flex items-center gap-2 text-sm text-primary-foreground/90"
-                >
-                  <c.icon size={15} /> {c.text}
-                </span>
-              ))}
+        <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-lg">
+          <object
+            data={`${cvPath}#view=FitH&toolbar=1&navpanes=0`}
+            type="application/pdf"
+            aria-label="Bui Le Huy Phuoc CV"
+            className="h-[75vh] min-h-[640px] w-full md:h-[calc(100vh-10rem)]"
+          >
+            <div className="flex min-h-[640px] flex-col items-center justify-center gap-4 p-8 text-center">
+              <p className="text-muted-foreground">
+                Your browser cannot display the PDF preview.
+              </p>
+              <a
+                href={cvPath}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full bg-primary px-5 py-2 text-primary-foreground"
+              >
+                Open the CV in a new tab
+              </a>
             </div>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 p-8">
-            <div className="md:col-span-2 space-y-8">
-              <div>
-                <SectionTitle icon={Briefcase} title="Work Experience" />
-                <div className="space-y-6 mt-4">
-                  {experience.map((e) => (
-                    <div key={e.role}>
-                      <div className="flex justify-between flex-wrap gap-1">
-                        <h3 className="text-primary">{e.role}</h3>
-                        <span className="text-xs text-accent">{e.time}</span>
-                      </div>
-                      <p className="text-sm text-muted-foreground mb-2">
-                        {e.company}
-                      </p>
-                      <ul className="space-y-1.5">
-                        {e.points.map((p) => (
-                          <li
-                            key={p}
-                            className="text-sm text-muted-foreground flex gap-2 leading-relaxed"
-                          >
-                            <span className="mt-2 w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
-                            {p}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <SectionTitle icon={GraduationCap} title="Education" />
-                <div className="space-y-4 mt-4">
-                  {education.map((ed) => (
-                    <div key={ed.degree}>
-                      <div className="flex justify-between flex-wrap gap-1">
-                        <h3 className="text-primary">{ed.degree}</h3>
-                        <span className="text-xs text-accent">{ed.time}</span>
-                      </div>
-                      <p className="text-sm text-muted-foreground">{ed.school}</p>
-                      <p className="text-sm text-muted-foreground">{ed.detail}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="space-y-8">
-              <div>
-                <SectionTitle icon={Star} title="Skills" />
-                <div className="flex flex-wrap gap-2 mt-4">
-                  {skills.map((s) => (
-                    <span
-                      key={s}
-                      className="text-xs px-3 py-1 rounded-full bg-accent/15 text-accent"
-                    >
-                      {s}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <SectionTitle icon={Globe} title="Languages" />
-                <div className="space-y-3 mt-4">
-                  {languages.map((l) => (
-                    <div key={l.name}>
-                      <p className="text-sm text-foreground">{l.name}</p>
-                      <p className="text-xs text-muted-foreground">{l.level}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <SectionTitle icon={Star} title="Career Objective" />
-                <p className="text-sm text-muted-foreground mt-4 leading-relaxed">
-                  To grow into a skilled full-stack developer, contribute to
-                  high-quality products, and continuously learn new technologies.
-                </p>
-              </div>
-            </div>
-          </div>
+          </object>
         </div>
       </div>
     </section>
