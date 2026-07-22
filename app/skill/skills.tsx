@@ -66,7 +66,7 @@ export function Skills() {
                     className="group flex flex-col items-center justify-center gap-3 rounded-2xl bg-card border border-border p-6 hover:shadow-lg hover:-translate-y-1 hover:border-accent transition-all"
                   >
                     <ImageWithFallback
-                      src={`https://cdn.simpleicons.org/${t.slug}`}
+                      src={t.name === "CSS3" ? "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain.svg" : `https://cdn.simpleicons.org/${t.slug}`}
                       alt={`${t.name} logo`}
                       className="w-12 h-12 object-contain group-hover:scale-110 transition-transform"
                     />
