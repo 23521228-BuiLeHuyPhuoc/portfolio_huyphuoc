@@ -29,16 +29,16 @@ export function Contact() {
   return (
     <section id="contact" className="py-24">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-14">
+        <div className="text-center mb-14" data-aos="fade-up">
           <h1 className="font-dancing font-extrabold text-5xl text-primary">Contact me</h1>
           <p className="text-muted-foreground mt-3 max-w-lg mx-auto">
             Looking for a developer to join your team? Leave me a message and
-            I'll get back to you as soon as possible.
+            I&apos;ll get back to you as soon as possible.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-10">
-          <div className="space-y-6">
+          <div className="space-y-6" data-aos="fade-right">
             {info.map((i) => (
               <div key={i.label} className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
@@ -57,7 +57,11 @@ export function Contact() {
             </div>
           </div>
 
-          <form onSubmit={onSubmit} className="rounded-2xl bg-card border border-border p-6 space-y-4">
+          <form
+            onSubmit={onSubmit}
+            data-aos="fade-left"
+            className="rounded-2xl bg-card border border-border p-6 space-y-4"
+          >
             <div>
               <label className="block text-sm mb-1 text-foreground">Full Name</label>
               <input

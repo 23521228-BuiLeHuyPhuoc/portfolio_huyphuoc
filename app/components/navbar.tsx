@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
-
+import { HeaderTypewriter } from "./HieuUngGoChu";
 const links = [
   { label: "Home", to: "/" },
   { label: "About", to: "/aboutme" },
@@ -36,21 +36,20 @@ export function Navbar() {
           : "bg-background/60 backdrop-blur-sm"
       }`}
     >
-      <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
-        <Link href="/" className="font-extrabold font-dancing text-3xl  shrink-0">
-         <span className="text-primary">
-          Hi, This is
-         </span>
-         <span className="text-accent"> Huy Phước Portfolio! </span>
-          
+      <nav className=" max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
+        <Link
+          href="/"
+          className="min-w-0 flex-1 overflow-hidden whitespace-nowrap font-extrabold font-dancing text-sm md:flex-none md:w-72 md:text-xs lg:w-[28rem] lg:text-base xl:w-[30rem] xl:text-lg shrink-0"
+        >
+          <HeaderTypewriter />
         </Link>
 
-        <ul className="hidden md:flex items-center gap-8 mx-auto">
+        <ul className="hidden md:flex items-center gap-4 lg:gap-8 mx-auto shrink-0">
           {links.map((l) => (
             <li key={l.to}>
               <Link
                 href={l.to}
-                className={`text-sm transition-colors ${
+                className={`text-lg transition-colors ${
                   isActive(l.to)
                     ? "text-accent"
                     : "text-foreground/80 hover:text-accent"

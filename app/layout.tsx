@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Dancing_Script, Google_Sans } from "next/font/google";
 import "./globals.scss";
 import "./tailwind.css";
+import AOSProvider from "./components/AOSProvider";
 import { Navbar } from "./components/navbar";
 import { Footer } from "./components/footer";
 
@@ -41,7 +42,9 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col">
         <Navbar />
-        <main className="flex-1 pt-16">{children}</main>
+        <AOSProvider>
+          <main className="flex-1 pt-16">{children}</main>
+        </AOSProvider>
         <Footer />
       </body>
     </html>

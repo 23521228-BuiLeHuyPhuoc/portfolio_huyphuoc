@@ -13,12 +13,12 @@ export function Hero() {
 
       <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative">
         <div>
-          <p className="text-accent text-[24px] tracking-wide mb-3">Hi, I'm</p>
+          <p className="text-accent text-[24px] tracking-wide mb-3">Hi, I&apos;m</p>
           <h1 className="font-dancing font-extrabold text-6xl md:text-7xl text-primary leading-tight mb-2">
             Bùi Lê Huy Phước
           </h1>
           <h2 className="text-xl md:text-2xl text-muted-foreground mb-6">
-            I'm currently looking for
+            I&apos;m currently looking for
             Frontend / Backend Developer Internship opportunity
           </h2>
           <p className="text-muted-foreground max-w-md mb-8 leading-relaxed">

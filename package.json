@@ -10,14 +10,17 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "lucide-react": "^0.487.0",
     "next": "16.2.11",
     "react": "19.2.4",
     "react-dom": "19.2.4",
+    "react-simple-typewriter": "^5.0.1",
     "sass": "^1.101.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/aos": "^3.0.8",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

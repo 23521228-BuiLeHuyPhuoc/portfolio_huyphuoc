@@ -33,14 +33,14 @@ export function About() {
   return (
     <section id="about" className="bg-secondary/40 py-24">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="mb-14 text-center">
+        <div className="mb-14 text-center" data-aos="fade-up">
           <h1 className="font-dancing text-5xl text-primary">
             A Little About Me
           </h1>
         </div>
 
         <div className="grid items-start gap-12 md:grid-cols-2">
-          <div>
+          <div data-aos="fade-right">
             <p className="mb-6 leading-relaxed text-muted-foreground">
               I am an enthusiastic developer who enjoys turning ideas into
               practical digital products. With a solid foundation in React and
@@ -56,12 +56,14 @@ export function About() {
           </div>
 
           <div className="space-y-5">
-            {timeline.map((item) => {
+            {timeline.map((item, index) => {
               const Icon = item.icon;
 
               return (
                 <div
                   key={item.title}
+                  data-aos="fade-left"
+                  data-aos-delay={index * 120}
                   className="flex gap-4 rounded-xl border border-border bg-card p-5"
                 >
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">

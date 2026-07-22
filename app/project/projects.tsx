@@ -35,16 +35,18 @@ export function Projects() {
   return (
     <section id="projects" className="py-24 bg-secondary/40">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-14">
-          <h1 className="font-dancing text-5xl text-primary">
+        <div className="text-center mb-14" data-aos="fade-up">
+          <h1 className="font-extrabold font-dancing text-5xl text-primary">
             Featured Projects
           </h1>
         </div>
 
         <div className="grid sm:grid-cols-2 gap-8">
-          {projects.map((p) => (
+          {projects.map((p, index) => (
             <div
               key={p.title}
+              data-aos="fade-up"
+              data-aos-delay={(index % 2) * 120}
               className="group rounded-2xl bg-card border border-border overflow-hidden hover:shadow-xl transition-all"
             >
               <div className="relative h-52 overflow-hidden">

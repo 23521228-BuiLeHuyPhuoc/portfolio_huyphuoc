@@ -48,14 +48,13 @@ export function Skills() {
   return (
     <section id="skills" className="py-24">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-14">
-          <p className="text-accent mb-1">Expertise</p>
-          <h1 className="font-dancing text-5xl text-primary">My Skills</h1>
+        <div className="text-center mb-14" data-aos="fade-up">
+          <h1 className="font-extrabold font-dancing text-5xl text-primary">My Skills</h1>
         </div>
 
         <div className="space-y-12">
           {groups.map((g) => (
-            <div key={g.title}>
+            <div key={g.title} data-aos="fade-up">
               <h3 className="text-primary mb-6 flex items-center gap-3">
                 <span className="w-8 h-px bg-accent" />
                 {g.title}
