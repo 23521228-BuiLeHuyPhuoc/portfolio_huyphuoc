@@ -1,16 +1,15 @@
-import { ImageWithFallback } from "./image-with-fallback";
+import { ImageWithFallback } from "../components/image-with-fallback";
 
 type Tech = { name: string; slug: string };
 
 const groups: { title: string; items: Tech[] }[] = [
   {
-    title: "Ngôn ngữ",
+    title: "Languages",
     items: [
       { name: "JavaScript", slug: "javascript" },
       { name: "TypeScript", slug: "typescript" },
       { name: "HTML5", slug: "html5" },
-      { name: "CSS3", slug: "css3" },
-      { name: "Python", slug: "python" },
+      { name: "CSS3", slug: "css" }
     ],
   },
   {
@@ -19,8 +18,8 @@ const groups: { title: string; items: Tech[] }[] = [
       { name: "React", slug: "react" },
       { name: "Next.js", slug: "nextdotjs" },
       { name: "Tailwind CSS", slug: "tailwindcss" },
-      { name: "Redux", slug: "redux" },
-      { name: "Motion", slug: "framer" },
+      { name: "Scss", slug: "sass" },
+      {name:"PUG", slug:"pug"}
     ],
   },
   {
@@ -28,19 +27,19 @@ const groups: { title: string; items: Tech[] }[] = [
     items: [
       { name: "Node.js", slug: "nodedotjs" },
       { name: "Express", slug: "express" },
-      { name: "Postman", slug: "postman" },
-      { name: "PostgreSQL", slug: "postgresql" },
-      { name: "Supabase", slug: "supabase" },
+      { name: "MongoDB", slug: "mongodb" },
+      {name:"Mongoose", slug:"mongoose"},
+      {name:"PostgreSQL", slug:"postgresql"},
     ],
   },
   {
-    title: "Công cụ",
+    title: "Tools",
     items: [
       { name: "Git", slug: "git" },
-      { name: "Figma", slug: "figma" },
-      { name: "Docker", slug: "docker" },
-      { name: "Vite", slug: "vite" },
-      { name: "Vercel", slug: "vercel" },
+      {name:"GitHub", slug:"github"},
+      {name:"Cloudinary", slug:"cloudinary"},
+      {name:"GitLab", slug:"gitlab"},
+      {name:"Neon", slug:"neon"},
     ],
   },
 ];
@@ -50,8 +49,8 @@ export function Skills() {
     <section id="skills" className="py-24">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-14">
-          <p className="text-accent mb-1">Chuyên môn</p>
-          <h1 className="font-dancing text-5xl text-primary">Kỹ năng của tôi</h1>
+          <p className="text-accent mb-1">Expertise</p>
+          <h1 className="font-dancing text-5xl text-primary">My Skills</h1>
         </div>
 
         <div className="space-y-12">

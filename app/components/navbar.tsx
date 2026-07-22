@@ -7,10 +7,10 @@ import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
 
 const links = [
-  { label: "Trang chủ", to: "/" },
-  { label: "Giới thiệu", to: "/aboutme" },
-  { label: "Kỹ năng", to: "/skill" },
-  { label: "Dự án", to: "/project" },
+  { label: "Home", to: "/" },
+  { label: "About", to: "/aboutme" },
+  { label: "Skills", to: "/skill" },
+  { label: "Projects", to: "/project" },
   { label: "CV", to: "/cv" },
 ];
 
@@ -37,8 +37,12 @@ export function Navbar() {
       }`}
     >
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
-        <Link href="/" className="font-dancing text-3xl text-primary shrink-0">
-          Huy Phước
+        <Link href="/" className="font-extrabold font-dancing text-3xl  shrink-0">
+         <span className="text-primary">
+          Hi, This is
+         </span>
+         <span className="text-accent"> Huy Phước Portfolio! </span>
+          
         </Link>
 
         <ul className="hidden md:flex items-center gap-8 mx-auto">

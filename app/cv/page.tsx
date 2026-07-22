@@ -16,7 +16,7 @@ import {
 const contact = [
   { icon: Mail, text: "huyphuoc@example.com" },
   { icon: Phone, text: "+84 123 456 789" },
-  { icon: MapPin, text: "TP. Hồ Chí Minh, Việt Nam" },
+  { icon: MapPin, text: "Ho Chi Minh City, Vietnam" },
   { icon: Github, text: "github.com/23521228-BuiLeHuyPhuoc" },
   { icon: Globe, text: "huyphuoc.dev" },
 ];
@@ -31,38 +31,38 @@ const skills = [
 ];
 
 const languages = [
-  { name: "Tiếng Việt", level: "Bản ngữ" },
-  { name: "Tiếng Anh", level: "TOEIC 800 / Giao tiếp tốt" },
+  { name: "Vietnamese", level: "Native" },
+  { name: "English", level: "TOEIC 800 / Good communication skills" },
 ];
 
 const experience = [
   {
     role: "Front-end Developer Intern",
-    company: "Công ty Công nghệ ABC",
-    time: "06/2024 — nay",
+    company: "ABC Technology Company",
+    time: "06/2024 — Present",
     points: [
-      "Phát triển giao diện web bằng React & TypeScript, tối ưu hiệu năng render.",
-      "Phối hợp với đội thiết kế để hiện thực hóa UI từ Figma với độ chính xác cao.",
-      "Tham gia review code và viết unit test cho các component quan trọng.",
+      "Developed web interfaces with React and TypeScript while optimizing rendering performance.",
+      "Collaborated with the design team to implement accurate, responsive interfaces from Figma.",
+      "Participated in code reviews and wrote unit tests for critical components.",
     ],
   },
   {
     role: "Freelance Web Developer",
-    company: "Dự án cá nhân & khách hàng nhỏ",
+    company: "Personal Projects & Small Business Clients",
     time: "2023 — 2024",
     points: [
-      "Xây dựng landing page và website giới thiệu cho khách hàng địa phương.",
-      "Triển khai và bảo trì sản phẩm trên Vercel, tối ưu SEO cơ bản.",
+      "Built landing pages and business websites for local clients.",
+      "Deployed and maintained products on Vercel while improving technical SEO.",
     ],
   },
 ];
 
 const education = [
   {
-    degree: "Cử nhân Công nghệ Thông tin",
-    school: "Đại học Công nghệ Thông tin - ĐHQG TP.HCM",
+    degree: "Bachelor of Information Technology",
+    school: "University of Information Technology - VNU-HCM",
     time: "2021 — 2025",
-    detail: "GPA: 3.4/4.0 — Chuyên ngành Kỹ thuật phần mềm.",
+    detail: "GPA: 3.4/4.0 — Major in Software Engineering.",
   },
 ];
 
@@ -90,13 +90,13 @@ export default function CVPage() {
             onClick={() => window.print()}
             className="inline-flex items-center gap-2 rounded-full border border-primary px-5 py-2 text-sm text-primary hover:bg-secondary transition-colors"
           >
-            <Printer size={16} /> In CV
+            <Printer size={16} /> Print CV
           </button>
           <button
             onClick={() => window.print()}
             className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2 text-sm text-primary-foreground hover:bg-accent transition-colors"
           >
-            <Download size={16} /> Tải PDF
+            <Download size={16} /> Download PDF
           </button>
         </div>
 
@@ -104,7 +104,7 @@ export default function CVPage() {
           <div className="bg-primary text-primary-foreground p-8">
             <h1 className="font-dancing text-5xl mb-1">Bùi Lê Huy Phước</h1>
             <p className="text-primary-foreground/80">
-              Lập trình viên Front-end / Full-stack
+              Frontend / Full-stack Developer
             </p>
             <div className="flex flex-wrap gap-x-6 gap-y-2 mt-5">
               {contact.map((c) => (
@@ -121,7 +121,7 @@ export default function CVPage() {
           <div className="grid md:grid-cols-3 gap-8 p-8">
             <div className="md:col-span-2 space-y-8">
               <div>
-                <SectionTitle icon={Briefcase} title="Kinh nghiệm làm việc" />
+                <SectionTitle icon={Briefcase} title="Work Experience" />
                 <div className="space-y-6 mt-4">
                   {experience.map((e) => (
                     <div key={e.role}>
@@ -149,7 +149,7 @@ export default function CVPage() {
               </div>
 
               <div>
-                <SectionTitle icon={GraduationCap} title="Học vấn" />
+                <SectionTitle icon={GraduationCap} title="Education" />
                 <div className="space-y-4 mt-4">
                   {education.map((ed) => (
                     <div key={ed.degree}>
@@ -167,7 +167,7 @@ export default function CVPage() {
 
             <div className="space-y-8">
               <div>
-                <SectionTitle icon={Star} title="Kỹ năng" />
+                <SectionTitle icon={Star} title="Skills" />
                 <div className="flex flex-wrap gap-2 mt-4">
                   {skills.map((s) => (
                     <span
@@ -181,7 +181,7 @@ export default function CVPage() {
               </div>
 
               <div>
-                <SectionTitle icon={Globe} title="Ngoại ngữ" />
+                <SectionTitle icon={Globe} title="Languages" />
                 <div className="space-y-3 mt-4">
                   {languages.map((l) => (
                     <div key={l.name}>
@@ -193,10 +193,10 @@ export default function CVPage() {
               </div>
 
               <div>
-                <SectionTitle icon={Star} title="Mục tiêu" />
+                <SectionTitle icon={Star} title="Career Objective" />
                 <p className="text-sm text-muted-foreground mt-4 leading-relaxed">
-                  Trở thành một Full-stack Developer giỏi, đóng góp vào các sản
-                  phẩm chất lượng và không ngừng học hỏi công nghệ mới.
+                  To grow into a skilled full-stack developer, contribute to
+                  high-quality products, and continuously learn new technologies.
                 </p>
               </div>
             </div>

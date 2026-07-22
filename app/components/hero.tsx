@@ -13,17 +13,17 @@ export function Hero() {
 
       <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative">
         <div>
-          <p className="text-accent tracking-wide mb-3">Xin chào, tôi là</p>
-          <h1 className="font-dancing text-6xl md:text-7xl text-primary leading-tight mb-2">
+          <p className="text-accent text-[24px] tracking-wide mb-3">Hi, I'm</p>
+          <h1 className="font-dancing font-extrabold text-6xl md:text-7xl text-primary leading-tight mb-2">
             Bùi Lê Huy Phước
           </h1>
           <h2 className="text-xl md:text-2xl text-muted-foreground mb-6">
-            Lập trình viên Front-end / Full-stack
+            I'm currently looking for
+            Frontend / Backend Developer Internship opportunity
           </h2>
           <p className="text-muted-foreground max-w-md mb-8 leading-relaxed">
-            Tôi xây dựng những sản phẩm web đẹp, nhanh và dễ dùng. Đam mê tạo ra
-            trải nghiệm người dùng mượt mà bằng React, TypeScript và những công
-            nghệ web hiện đại.
+            I am passionate about web development and seeking opportunity to work in a dynamic team where I can gain hands-on experience by
+            contributing to real-world projects.
           </p>
 
           <div className="flex flex-wrap items-center gap-4 mb-8">
@@ -31,13 +31,13 @@ export function Hero() {
               href="/project"
               className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-primary-foreground hover:bg-accent transition-colors"
             >
-              Xem dự án <ArrowRight size={18} />
+              View Projects <ArrowRight size={18} />
             </Link>
             <Link
               href="/cv"
               className="inline-flex items-center gap-2 rounded-full border border-primary px-6 py-3 text-primary hover:bg-secondary transition-colors"
             >
-              <FileText size={18} /> Xem CV
+              <FileText size={18} /> View CV
             </Link>
           </div>
 
@@ -58,8 +58,8 @@ export function Hero() {
           <div className="relative">
             <div className="absolute inset-0 rounded-[2rem] bg-accent/20 rotate-6" />
             <ImageWithFallback
-              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-              alt="Chân dung Bùi Lê Huy Phước"
+              src="https://res-console.cloudinary.com/dcollo5h4/thumbnails/v1/image/upload/v1784694990/MTc4NDY5NDk3NDIyMV8yMDgxNTEzMTUxMzk1MDk4Mjk5Xzc4MDgyNDU2NDAyMTYwNjAxNjRfYjllZjhkYTRhYTQ5ZDJlMGE0ODg4MDk3NDUyZGVlOWRfbmRjNGRt/drilldown"
+              alt="Portrait of Bùi Lê Huy Phước"
               className="relative w-72 h-80 md:w-80 md:h-96 object-cover rounded-[2rem] shadow-xl"
             />
           </div>

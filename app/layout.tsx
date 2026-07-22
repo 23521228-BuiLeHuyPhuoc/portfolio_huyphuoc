@@ -1,18 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Dancing_Script } from "next/font/google";
+import { Dancing_Script, Google_Sans } from "next/font/google";
 import "./globals.scss";
 import "./tailwind.css";
 import { Navbar } from "./components/navbar";
 import { Footer } from "./components/footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const googleSans = Google_Sans({
+  variable: "--font-google-sans",
+  subsets: ["latin", "vietnamese"],
+  weight: "variable",
+  adjustFontFallback: false,
 });
 
 const dancingScript = Dancing_Script({
@@ -23,7 +20,7 @@ const dancingScript = Dancing_Script({
 
 export const metadata: Metadata = {
   title: "Bùi Lê Huy Phước — Portfolio",
-  description: "Portfolio lập trình viên Front-end / Full-stack",
+  description: "Frontend and full-stack developer portfolio",
 };
 
 const themeScript = `(function(){try{var t=localStorage.getItem('theme');var d=t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches);if(d)document.documentElement.classList.add('dark');}catch(e){}})();`;
@@ -35,9 +32,9 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="vi"
+      lang="en"
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} ${dancingScript.variable} h-full antialiased`}
+      className={`${googleSans.variable} ${dancingScript.variable} h-full antialiased`}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
