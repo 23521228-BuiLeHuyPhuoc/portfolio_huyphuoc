@@ -18,8 +18,7 @@ export function Hero() {
             Bùi Lê Huy Phước
           </h1>
           <h2 className="text-xl  md:text-2xl font-bold text-accent mb-6">
-            I&apos;m currently looking for
-            Backend / Fullstack Developer Internship opportunity
+            I&apos;m currently looking for Frontend/ Backend / Fullstack Developer Internship opportunity
           </h2>
           <p className=" text-muted-foreground  max-w-md mb-8 text-[17px] leading-relaxed">
             I am passionate about web development and seeking an opportunity to work in a dynamic team where I can gain hands-on experience by
