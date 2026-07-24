@@ -19,10 +19,10 @@ export function Hero() {
           </h1>
           <h2 className="text-xl  md:text-2xl font-bold text-accent mb-6">
             I&apos;m currently looking for
-            Frontend / Backend Developer Internship opportunity
+            Backend / Fullstack Developer Internship opportunity
           </h2>
           <p className=" text-muted-foreground  max-w-md mb-8 text-[17px] leading-relaxed">
-            I am passionate about web development and seeking opportunity to work in a dynamic team where I can gain hands-on experience by
+            I am passionate about web development and seeking an opportunity to work in a dynamic team where I can gain hands-on experience by
             contributing to real-world projects.
           </p>
 

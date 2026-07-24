@@ -25,7 +25,7 @@ const timeline: TimelineItem[] = [
     title: "TOEIC 915",
     place: "Listening & Reading",
     time: "2026/04/07 — 2028/04/07",
-    link: "https://your-certificate-link.com",
+    link: "https://res.cloudinary.com/dcollo5h4/image/upload/v1784880995/toeicRL_nkaitl.jpg",
   },
 ];
 
@@ -42,14 +42,7 @@ export function About() {
         <div className="grid items-start gap-12 md:grid-cols-2">
           <div data-aos="fade-right">
             <p className="mb-6 leading-relaxed text-muted-foreground">
-             I am an enthusiastic developer with knowledge of both frontend and backend development, passionate about turning ideas into practical digital products. I focus on writing clean code, optimizing performance, and creating thoughtful user experiences.
-
-            </p>
-
-            <p className="mb-8 leading-relaxed text-muted-foreground">
-             I am seeking an internship opportunity where I can apply my skills, gain hands-on experience, and grow in a professional environment. I look forward to collaborating with a team, contributing to meaningful projects, and pursuing my passion for software development.
-
-            </p>
+I am an enthusiastic third-year student with a passion for both frontend and backend development. I have completed all required coursework and only have my graduation thesis remaining, allowing me to work full-time. I am seeking an internship where I can apply my skills, gain hands-on experience, and contribute to meaningful software projects.            </p>
           </div>
 
           <div className="space-y-5">
@@ -61,7 +54,7 @@ export function About() {
                   key={item.title}
                   data-aos="fade-left"
                   data-aos-delay={index * 120}
-                  className="flex gap-4 rounded-xl border border-border bg-card p-5"
+                  className=" flex gap-4 rounded-xl border border-border bg-card p-5"
                 >
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
                     <Icon size={20} />
@@ -70,7 +63,7 @@ export function About() {
                   <div className="flex-1">
                     <div className="flex items-start justify-between gap-4">
                       <div>
-                        <h3 className="text-primary">{item.title}</h3>
+                        <h3 className="font-bold text-primary">{item.title}</h3>
 
                         <p className="text-sm text-muted-foreground">
                           {item.place}

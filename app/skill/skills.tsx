@@ -6,15 +6,16 @@ const groups: { title: string; items: Tech[] }[] = [
   {
     title: "Languages",
     items: [
+      {name:"C++", slug:"cplusplus"},
       { name: "JavaScript", slug: "javascript" },
-      { name: "TypeScript", slug: "typescript" },
-      { name: "HTML5", slug: "html5" },
-      { name: "CSS3", slug: "css" }
+      { name: "TypeScript", slug: "typescript" }
     ],
   },
   {
     title: "Front-end",
-    items: [
+    items: [      
+      { name: "HTML5", slug: "html5" },
+      { name: "CSS3", slug: "css" },
       { name: "React", slug: "react" },
       { name: "Next.js", slug: "nextdotjs" },
       { name: "Tailwind CSS", slug: "tailwindcss" },
@@ -29,7 +30,7 @@ const groups: { title: string; items: Tech[] }[] = [
       { name: "Express", slug: "express" },
       { name: "MongoDB", slug: "mongodb" },
       {name:"Mongoose", slug:"mongoose"},
-      {name:"PostgreSQL", slug:"postgresql"},
+      {name:"PostgreSQL", slug:"postgresql"}
     ],
   },
   {
@@ -40,6 +41,7 @@ const groups: { title: string; items: Tech[] }[] = [
       {name:"Cloudinary", slug:"cloudinary"},
       {name:"GitLab", slug:"gitlab"},
       {name:"Neon", slug:"neon"},
+      {name:"Yarn", slug:"yarn"},
     ],
   },
 ];
@@ -66,7 +68,7 @@ export function Skills() {
                     className="group flex flex-col items-center justify-center gap-3 rounded-2xl bg-card border border-border p-6 hover:shadow-lg hover:-translate-y-1 hover:border-accent transition-all"
                   >
                     <ImageWithFallback
-                      src={`https://cdn.simpleicons.org/${t.slug}`}
+                      src={t.name === "CSS3" ? "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain.svg" : `https://cdn.simpleicons.org/${t.slug}`}
                       alt={`${t.name} logo`}
                       className="w-12 h-12 object-contain group-hover:scale-110 transition-transform"
                     />

@@ -1,7 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, MapPin, Phone, Send, Github, CheckCircle2 } from "lucide-react";
+import {
+  Mail,
+  MapPin,
+  Phone,
+  Send,
+  Github,
+  CheckCircle2,
+  LoaderCircle,
+} from "lucide-react";
 
 const info = [
   { icon: Mail, label: "Email", value: "huyphuoc09112005@gmail.com" },
@@ -10,20 +18,52 @@ const info = [
 ];
 
 export function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+    website: "",
+  });
   const [sent, setSent] = useState(false);
   const [error, setError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!form.name || !form.email || !form.message) {
+
+    if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
       setError("Please complete all required fields.");
       return;
     }
+
     setError("");
-    setSent(true);
-    setForm({ name: "", email: "", message: "" });
-    setTimeout(() => setSent(false), 4000);
+    setSent(false);
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = (await response.json()) as { message?: string };
+
+      if (!response.ok) {
+        throw new Error(data.message || "Could not send your message.");
+      }
+
+      setSent(true);
+      setForm({ name: "", email: "", message: "", website: "" });
+      window.setTimeout(() => setSent(false), 4000);
+    } catch (submitError) {
+      setError(
+        submitError instanceof Error
+          ? submitError.message
+          : "Could not send your message. Please try again.",
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -62,8 +102,13 @@ export function Contact() {
             className="rounded-2xl bg-card border border-border p-6 space-y-4"
           >
             <div>
-              <label className="block text-sm mb-1 text-foreground">Full Name</label>
+              <label htmlFor="contact-name" className="block text-sm mb-1 text-foreground">Full Name</label>
               <input
+                id="contact-name"
+                name="name"
+                required
+                maxLength={100}
+                autoComplete="name"
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
                 placeholder="Your name"
@@ -71,9 +116,14 @@ export function Contact() {
               />
             </div>
             <div>
-              <label className="block text-sm mb-1 text-foreground">Email</label>
+              <label htmlFor="contact-email" className="block text-sm mb-1 text-foreground">Email</label>
               <input
+                id="contact-email"
+                name="email"
                 type="email"
+                required
+                maxLength={254}
+                autoComplete="email"
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 placeholder="email@company.com"
@@ -81,26 +131,52 @@ export function Contact() {
               />
             </div>
             <div>
-              <label className="block text-sm mb-1 text-foreground">Message</label>
+              <label htmlFor="contact-message" className="block text-sm mb-1 text-foreground">Message</label>
               <textarea
+                id="contact-message"
+                name="message"
                 rows={4}
+                required
+                maxLength={5000}
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
                 placeholder="Tell me about the role or project..."
                 className="w-full rounded-lg border border-border bg-input-background px-4 py-2.5 outline-none focus:border-accent transition-colors resize-none"
               />
             </div>
-            {error && <p className="text-sm text-red-500">{error}</p>}
-            {sent && (
-              <p className="text-sm text-green-600 flex items-center gap-2">
-                <CheckCircle2 size={16} /> Thank you! Your message has been sent.
-              </p>
-            )}
+            <div className="absolute left-[-9999px]" aria-hidden="true">
+              <label htmlFor="contact-website">Website</label>
+              <input
+                id="contact-website"
+                name="website"
+                tabIndex={-1}
+                autoComplete="off"
+                value={form.website}
+                onChange={(e) => setForm({ ...form, website: e.target.value })}
+              />
+            </div>
+            <div aria-live="polite">
+              {error && <p className="text-sm text-red-500">{error}</p>}
+              {sent && (
+                <p className="text-sm text-green-600 flex items-center gap-2">
+                  <CheckCircle2 size={16} /> Thank you! Your message has been sent.
+                </p>
+              )}
+            </div>
             <button
               type="submit"
-              className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-primary-foreground hover:bg-accent transition-colors"
+              disabled={isSubmitting}
+              className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-primary-foreground hover:bg-accent transition-colors disabled:cursor-not-allowed disabled:opacity-70"
             >
-              Send Message <Send size={16} />
+              {isSubmitting ? (
+                <>
+                  Sending <LoaderCircle size={16} className="animate-spin" />
+                </>
+              ) : (
+                <>
+                  Send Message <Send size={16} />
+                </>
+              )}
             </button>
           </form>
         </div>
