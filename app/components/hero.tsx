@@ -54,7 +54,7 @@ export function Hero() {
           <div className="relative">
             <div className="absolute inset-0 rounded-[2rem] bg-accent/20 rotate-6" />
             <ImageWithFallback
-              src="https://res-console.cloudinary.com/dcollo5h4/thumbnails/v1/image/upload/v1784694990/MTc4NDY5NDk3NDIyMV8yMDgxNTEzMTUxMzk1MDk4Mjk5Xzc4MDgyNDU2NDAyMTYwNjAxNjRfYjllZjhkYTRhYTQ5ZDJlMGE0ODg4MDk3NDUyZGVlOWRfbmRjNGRt/drilldown"
+              src="http://res.cloudinary.com/dcollo5h4/image/upload/v1784694990/1784694974221_2081513151395098299_7808245640216060164_b9ef8da4aa49d2e0a4888097452dee9d_ndc4dm.jpg"
               alt="Portrait of Bùi Lê Huy Phước"
               className="relative w-72 h-80 md:w-80 md:h-96 object-cover rounded-[2rem] shadow-xl"
             />
