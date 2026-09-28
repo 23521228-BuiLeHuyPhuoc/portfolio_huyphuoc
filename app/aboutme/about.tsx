@@ -1,6 +1,7 @@
 import {
   GraduationCap,
   Award,
+  Briefcase,
   ExternalLink,
   type LucideIcon,
 } from "lucide-react";
@@ -42,7 +43,8 @@ export function About() {
         <div className="grid items-start gap-12 md:grid-cols-2">
           <div data-aos="fade-right">
             <p className="mb-6 leading-relaxed text-muted-foreground">
-I am an enthusiastic third-year student with a passion for both frontend and backend development. I have completed all required coursework and only have my graduation thesis remaining, allowing me to work full-time. I am seeking an internship where I can apply my skills, gain hands-on experience, and contribute to meaningful software projects.            </p>
+              I am an enthusiastic third-year student with a passion for both frontend and backend development. I have completed all required coursework and only have my graduation thesis remaining, allowing me to work full-time. Currently, I am working as an Intern Developer at AIPOWER, gaining practical experience and contributing to enterprise software projects.
+            </p>
           </div>
 
           <div className="space-y-5">
@@ -91,6 +93,72 @@ I am an enthusiastic third-year student with a passion for both frontend and bac
                 </div>
               );
             })}
+          </div>
+        </div>
+
+        <div className="mt-16 md:mt-20" data-aos="fade-up">
+          <div className="mb-8 flex items-center gap-3">
+            <h2 className="font-dancing text-3xl font-bold text-primary md:text-4xl">
+              Work Experience
+            </h2>
+            <div className="h-px flex-1 bg-border" />
+          </div>
+
+          <div className="rounded-2xl border border-border bg-card p-6 md:p-8 shadow-sm">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+              <div className="flex gap-4">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <Briefcase size={20} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-primary md:text-2xl">
+                    Intern Developer
+                  </h3>
+                  <p className="text-base font-semibold text-foreground/90">
+                    AIPOWER
+                  </p>
+                  <p className="mt-1 text-sm font-medium text-accent">
+                    Nam Thiên Long — Demand Planning System
+                  </p>
+                </div>
+              </div>
+
+              <div className="sm:text-right">
+                <span className="inline-block rounded-full bg-accent/15 px-3 py-1 text-xs font-semibold text-accent">
+                  18 Aug 2026 – Present
+                </span>
+              </div>
+            </div>
+
+            <ul className="mt-6 space-y-2.5 text-sm leading-relaxed text-muted-foreground md:text-base">
+              <li className="flex items-start gap-2.5">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                <span>
+                  Built and refined user interfaces using React and TypeScript for Demand Planning modules, including Seasonal, Scenario Forecast, and Consensus Forecast.
+                </span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                <span>
+                  Implemented UI updates to display changes after running Scenario Forecast on the Dashboard and Consensus Forecast views.
+                </span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                <span>
+                  Improved the user interface and interactions for the Adjustment module.
+                </span>
+              </li>
+            </ul>
+
+            <div className="mt-6 flex flex-wrap gap-2 border-t border-border pt-4">
+              <span className="rounded-full bg-accent/15 px-3 py-1 text-xs text-accent">
+                React
+              </span>
+              <span className="rounded-full bg-accent/15 px-3 py-1 text-xs text-accent">
+                TypeScript
+              </span>
+            </div>
           </div>
         </div>
       </div>
