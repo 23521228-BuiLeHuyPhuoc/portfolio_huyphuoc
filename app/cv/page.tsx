@@ -1,6 +1,6 @@
 import { Download, ExternalLink } from "lucide-react";
 
-const cvPath = "/autoCV.pdf";
+const cvPath = "/BuiLeHuyPhuoc_CV_UIT.pdf";
 
 export default function CVPage() {
   return (
@@ -24,7 +24,7 @@ export default function CVPage() {
             </a>
             <a
               href={cvPath}
-              download="Bui-Le-Huy-Phuoc-CV.pdf"
+              download="BuiLeHuyPhuoc_CV_UIT.pdf"
               className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2 text-sm text-primary-foreground transition-colors hover:bg-accent"
             >
               <Download size={16} /> Download PDF
