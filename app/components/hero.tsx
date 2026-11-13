@@ -18,11 +18,11 @@ export function Hero() {
             Bùi Lê Huy Phước
           </h1>
           <h2 className="text-xl  md:text-2xl font-bold text-accent mb-6">
-            I&apos;m currently looking for Frontend/ Backend / Fullstack Developer Intern/Fresher opportunity
+            I&apos;m currently looking for an AI Engineer Intern/Fresher opportunity
           </h2>
           <p className=" text-muted-foreground  max-w-md mb-8 text-[17px] leading-relaxed">
-            I am passionate about web development and seeking an opportunity to work in a dynamic team where I can gain hands-on experience by
-            contributing to real-world projects.
+            I am passionate about building AI-powered products, combining full-stack development with hands-on experience
+            in LLM integration, fine-tuning, and recommendation systems to solve real-world problems.
           </p>
 
           <div className="flex flex-wrap items-center gap-4 mb-8">

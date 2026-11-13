@@ -20,7 +20,7 @@ const dancingScript = Dancing_Script({
 
 export const metadata: Metadata = {
   title: "Bùi Lê Huy Phước — Portfolio",
-  description: "Frontend and full-stack developer portfolio",
+  description: "Aspiring AI Engineer and full-stack developer portfolio",
 };
 
 const themeScript = `(function(){try{var t=localStorage.getItem('theme');var d=t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches);if(d)document.documentElement.classList.add('dark');}catch(e){}})();`;
