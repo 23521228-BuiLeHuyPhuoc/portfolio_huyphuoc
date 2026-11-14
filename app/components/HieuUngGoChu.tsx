@@ -5,9 +5,9 @@ export function TypewriterText() {
     <span className="text-primary font-semibold">
       <Typewriter
         words={[
-          "I'm currently looking for Frontend / Backend Developer Internship opportunity",
-          "I'm currently looking for Frontend / Backend Developer Internship opportunity",
-          "I'm currently looking for Frontend / Backend Developer Internship opportunity",
+          "I'm currently looking for Software Engineer / Frontend / Backend Developer Internship opportunity",
+          "I'm currently looking for Software Engineer / Frontend / Backend Developer Internship opportunity",
+          "I'm currently looking for Software Engineer / Frontend / Backend Developer Internship opportunity",
         ]}
         loop={0}
         cursor
