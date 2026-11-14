@@ -43,7 +43,7 @@ export function About() {
         <div className="grid items-start gap-12 md:grid-cols-2">
           <div data-aos="fade-right">
             <p className="mb-6 leading-relaxed text-muted-foreground">
-              I am an enthusiastic fourth-year student aspiring to become an AI Engineer, with a full-stack background and hands-on experience in LLM integration, model fine-tuning, and recommendation systems. I have completed all required coursework and only have my graduation thesis remaining, allowing me to work full-time. Currently, I am working as an Intern Developer at AIPOWER, gaining practical experience and contributing to enterprise software projects.
+              I am an enthusiastic third-year student with a passion for both frontend and backend development. I have completed all required coursework and only have my graduation thesis remaining, allowing me to work full-time. Currently, I am working as an Intern Developer at AIPOWER, gaining practical experience and contributing to enterprise software projects.
             </p>
           </div>
 
